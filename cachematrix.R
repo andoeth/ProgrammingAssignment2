@@ -3,6 +3,8 @@
 ## 2. Solves for the inverse but looks for a cached answer.
 
 ## Makes list to set & get value of matrix and inverse
+## Start with null cache, then set matrix input. Next get matrix, set inverse, and get inverse.
+## Returns a list with the outputs of the set, get, setInverse, and getInverse functions for later use.
 
 makeCacheMatrix <- function(x = matrix()) {
      m <- NULL
@@ -19,6 +21,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Caches inverse of matrix, but looks to see if answer is cached.
+## If the getInverse function returns a non NULL value, returns that value because it is cached and will save time.
+## Else: gets the matrix from makeCacheMatrix function, solves for the inverse, and sets it to the cache for later use.
+## Returns the value of the inverse matrix, whether from the cache or via solving for the inverse.
 
 cacheSolve <- function(x, ...) {
      m <- x$getInverse()
