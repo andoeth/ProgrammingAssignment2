@@ -36,3 +36,16 @@ cacheSolve <- function(x, ...) {
      x$setInverse(m)
      m
 }
+          
+## Testing out the function to see if the code works as intended
+cacheSolve(makeCacheMatrix(x <- rbind(c(5, 1.5), c(2, 4))))
+## The result is below
+##                     [,1]        [,2]
+##                     [1,]  0.2352941 -0.08823529
+##                     [2,] -0.1176471  0.29411765
+## Solving regularly shows that the answer is the same, so the function is correct.
+## x <- rbind(c(5, 1.5), c(2, 4))
+## solve(x)
+##            [,1]        [,2]
+## [1,]  0.2352941 -0.08823529
+## [2,] -0.1176471  0.29411765
